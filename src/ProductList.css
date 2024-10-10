@@ -40,6 +40,18 @@ body {
   text-decoration: none;
 }
 
+.navbar .ul .luxury > div {
+  color: white;
+}
+
+.cart-quantity {
+  color: white;
+  font-size: 1.7rem;
+  position: relative;
+  top: 18px;
+  right: 47%;
+}
+
 /* Product Grid */
 .product-grid {
   display: flex;
