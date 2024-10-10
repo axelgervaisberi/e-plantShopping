@@ -7,7 +7,7 @@ import { addItem } from "./CartSlice";
 function ProductList() {
   const [showCart, setShowCart] = useState(false);
   const [showPlants, setShowPlants] = useState(false); // State to control the visibility of the About Us page
-  const [addedToCart, setAddedToCart] = useState(false);
+  const [addedToCart, setAddedToCart] = useState({});
   const dispatch = useDispatch();
   let cartQuantity = useSelector((state) => state.cart.totalQuantity);
 
@@ -408,10 +408,15 @@ function ProductList() {
                     <p>{plant.description}</p>
                     <p className="product-price">Price: ${plant.cost}</p>
                     <button
-                      className="product-button"
+                      className={`product-button ${
+                        addedToCart[plant.name] === true ? "disabled" : ""
+                      }`}
                       onClick={() => handleAddToCart(plant)}
+                      disabled={addedToCart[plant.name] === true}
                     >
-                      Add to Cart
+                      {addedToCart[plant.name] === true
+                        ? "Added to Cart"
+                        : "Add to Cart"}
                     </button>
                   </div>
                 ))}
