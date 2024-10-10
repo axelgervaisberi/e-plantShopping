@@ -338,7 +338,7 @@ function ProductList() {
               alt=""
             />
             <a
-              href="/"
+              href="/e-plantShopping"
               style={{
                 color: "white",
                 textDecoration: "none",
